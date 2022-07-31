@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h1>COVER TEMPLATE CONNECTED</h1>
+    <h1><a href="{% url 'book:var' %}">Link to variable</a>  </h1>
+    <img src="{% static 'book/i.jpg' %}" alt="cover image">
+{% endblock %}
+
+
+

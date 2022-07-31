@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>VARIABLE.HTML</h1>
+    {#  FILTERS  #}
+    <h2>{{first_name | lower | capfirst}} {{first_name | length}} {{last_name | capfirst}}</h2>
+
+    {#  VARIABLES  #}
+    <h2>{{some_list.0}}</h2>
+    <h2>{{some_dict.inside_key}}</h2>
+
+    {#  TAGS  #}
+    <ul>
+    {% for item in some_list %}
+        {% if item == 2 %}
+            <li> TWO {{item}}</li> 
+        {% else %}
+            <li> Item {{item}}</li> 
+        {% endif %}
+    {% endfor %}
+    </ul>
+    <ul>
+    {% for k,v in some_dict.items %}
+        <li>{{k}} # {{v}}</li> 
+    {% endfor %}
+    </ul>
+
+    {%if user_logged_in%}
+        <h3>Welcome back, {{first_name}}! You're logged in</h3>
+    {% endif %}
+
+</body>
+</html>
